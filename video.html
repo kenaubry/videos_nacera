@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture de Vidéo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    video {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lecture de la Vidéo</h1>
+
+  <!-- Zone pour afficher la vidéo -->
+  <video id="video-player" controls>
+    <source id="video-source" src="" type="video/mp4">
+    Votre navigateur ne supporte pas le lecteur vidéo.
+  </video>
+
+  <!-- Lien pour retourner à la liste -->
+  <a href="index.html">Retour à la liste des vidéos</a>
+
+  <script>
+    // Récupérer le paramètre 'video' de l'URL
+    const params = new URLSearchParams(window.location.search);
+    const videoSrc = params.get('video');
+
+    // Si une vidéo est spécifiée, mettre à jour la source
+    if (videoSrc) {
+      const videoSource = document.getElementById('video-source');
+      videoSource.src = `videos/${videoSrc}`; // Modifier selon votre structure de fichiers
+      document.getElementById('video-player').load();
+    } else {
+      alert("Aucune vidéo sélectionnée !");
+    }
+  </script>
+
+</body>
+</html>

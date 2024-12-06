@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste de Vidéos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .video-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .video-item {
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+      width: 150px;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s;
+    }
+    .video-item:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Liste de Vidéos</h1>
+
+  <div class="video-list">
+    <!-- Chaque vidéo a un lien avec un paramètre dans l'URL -->
+    <a class="video-item" href="video.html?video=video1.mp4">Vidéo 1</a>
+    <a class="video-item" href="video.html?video=video2.mp4">Vidéo 2</a>
+  </div>
+
+</body>
+</html>
